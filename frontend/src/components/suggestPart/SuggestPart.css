@@ -1,0 +1,52 @@
+.suggest-slider{
+    list-style: none;
+    padding: 0 1em 0 1em;
+}
+.suggest-card{
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    margin: 0.3em;
+}
+.suggest-card > img{
+    border-radius: 10px;
+    max-width: 100%;
+}
+.suggest-card > h5{
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.suggest-card > h5:hover{
+    background:rgba(17,151,68,0.9)
+}
+.suggest-card > h5 > span{
+    display: block;
+    padding-bottom: 0.5em;
+}
+@media screen and (max-width: 553px) {
+    .suggest-card > h5{
+        font-size: 1.1em;
+    } 
+}
+.slide-arrow{
+    padding: 0.8em;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 1px 3px 22px -1px rgba(17,151,68,0.9);
+    cursor: pointer;
+}
+.slide-arrow_1{
+    transform: translateX(1.3em);
+}
+.slide-arrow_2{
+    transform: translateX(-1.6em);
+}
