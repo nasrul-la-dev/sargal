@@ -16,8 +16,8 @@ export default function recentPart() {
                 </div>
                 {products.map(product => {
                     return (
-                        <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            <ProductCard key={product.id} />
+                        <div key={product.id} className="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                            <ProductCard  {...product}/>
                         </div>
                     )
                 })}

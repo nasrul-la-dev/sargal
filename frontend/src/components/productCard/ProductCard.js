@@ -1,34 +1,60 @@
-import React, { useState } from 'react'
+import React, { useState, createRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-    faHeart as filledHeart,
-    faShuffle,
-    faStar,
-    faBasketShopping
+    faHeart, faShuffle, faStar, faBasketShopping, faMinus, faPlus
 } from '@fortawesome/free-solid-svg-icons'
-import {
-    faHeart as emptyHeart,
-    faEye,
-    faStarHalfStroke
-} from '@fortawesome/free-regular-svg-icons'
-import { v4 as uuidv4 } from 'uuid';
+import { faEye, faStarHalfStroke } from '@fortawesome/free-regular-svg-icons'
+import { parse, v4 as uuidv4 } from 'uuid';
+import './ProductCard.css'
 
 import Modal from 'react-bootstrap/Modal'
 export default function ProductCard(props) {
     const [compareProduct, setCompareProduct] = useState(false);
     const [viewProduct, setViewProduct] = useState(false);
+    const [wishProduct, setWishProduct] = useState(false);
+    const [showAction, setShowAction] = useState(true);
+    const orderQuantity = createRef();
+
+
+    const handleWishingProduct = () => {
+        setWishProduct(value => !value)
+    }
+    const handleShowAction = () => {
+        setShowAction(value => !value)
+    }
+
+    const handleOrderQuantity = (action) => {
+        const inputElement = orderQuantity.current;
+        let currentValue = parseInt(inputElement.value)
+        if (currentValue >= 1) {
+            if (action === 'plus') {
+                currentValue += 1;
+                inputElement.value = `${currentValue}`;
+            }
+            if (action === 'minus') {
+                currentValue -= 1;
+                inputElement.value = `${currentValue}`;
+            }
+        } else {
+            inputElement.value = 0;
+        }
+    }
     return (
         <div>
             <div className="product-card">
                 <div className="product-media">
                     <div className="product-labels">
-                        <label className="label-text">Nouveaté</label>
-                        <label className="product-wish wish">
-                            <FontAwesomeIcon icon={filledHeart} />
-                            <FontAwesomeIcon icon={emptyHeart} />
+                        <label className="label-new">Nouveaté</label>
+                        <label className="product-wish" onClick={() => handleWishingProduct()}>
+                            {wishProduct ?
+                                <FontAwesomeIcon className="wish wish_2" icon={faHeart} />
+                                :
+                                <FontAwesomeIcon className="wish wish_1" icon={faHeart} />
+                            }
+
                         </label>
                     </div>
-                    <div>
+                    <div className="product-image-container">
                         <a className="product-image" href="/">
                             <img src={process.env.PUBLIC_URL + `/${props.img}`} alt="product" />
                         </a>
@@ -69,32 +95,45 @@ export default function ProductCard(props) {
                     </div>
                 </div>
                 <div className="product-content">
-                    <div className="product-rating">
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStar} />
-                        <FontAwesomeIcon icon={faStarHalfStroke} />
+                    <div className="product-rating pt-3 pb-2">
+                        <FontAwesomeIcon className="icon-star" icon={faStar} />
+                        <FontAwesomeIcon className="icon-star" icon={faStar} />
+                        <FontAwesomeIcon className="icon-star" icon={faStar} />
+                        <FontAwesomeIcon className="icon-star" icon={faStarHalfStroke} />
                         <span>(3)</span>
                     </div>
                     <h6 className="product-name">
                         <a href="/">{props.name}</a>
                     </h6>
-                    <h6 className="product-price">
-                        <del>
-                            ${props.normal_price}
-                        </del>
-                        <span>
-                            {props.promo_price && `$${props.promo_price}`}<small>/piece</small>
-                        </span>
+                    <h6 className="product-price mb-3">
+                        {props.promo_price != null ?
+                            <>
+                                <del className='normal_price'>${props.normal_price}</del>&nbsp;&nbsp;
+                                <span>${props.promo_price}<small>/piece</small></span>
+                            </>
+                            : <span>
+                                ${props.normal_price}
+                            </span>
+                        }
                     </h6>
-                    <button className="product-add" title="Ajouter au panier">
-                        <i className="fas fa-shopping-basket"></i>
-                        <span><FontAwesomeIcon icon={faBasketShopping} />Ajouter</span>
-                    </button>
                     <div className="product-action">
-                        <button className="action-minus" title="Diminuer la quantité"><i className="icofont-minus"></i></button>
-                        <input className="action-input" title="Quantité actuelle" type="text" name="quantity" value="1" />
-                        <button className="action-plus" title="Augmenter la quantité"><i className="icofont-plus"></i></button>
+                        {showAction ?
+                            <button className="product-add mb-3" title="Ajouter au panier" onClick={() => handleShowAction()}>
+                                <span><FontAwesomeIcon icon={faBasketShopping} />&nbsp;Ajouter</span>
+                            </button>
+                            :
+                            <>
+                                <button className="action-minus" title="Diminuer la quantité" onClick={() => handleOrderQuantity('minus')}>
+                                    <FontAwesomeIcon icon={faMinus} />
+                                </button>
+                                <input ref={orderQuantity} className="action-input" title="Quantité actuelle" type="text" name="quantity" value='1' />
+                                <button className="action-plus" title="Augmenter la quantité" onClick={() => handleOrderQuantity('plus')}>
+                                    <FontAwesomeIcon icon={faPlus} />
+                                </button>
+                            </>
+                        }
+
+
                     </div>
                 </div>
             </div>

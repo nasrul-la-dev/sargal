@@ -2,12 +2,12 @@ const products = [
     {
        id: "1poi",
        name: "Poivrons",
-       img: "poivron.png",
-       promo_price: 34,
-       real_price: 28,
+       img: "images/poivron.png",
+       promo_price: 28,
+       normal_price: 34,
        createdAt: '12-01-2022'
     },
-    {
+    /*{
         id: "2car",
         name: "Carrottes",
         img: "carrotte.png",
@@ -71,7 +71,7 @@ const products = [
         promo_price: 34,
         real_price: 28,
         createdAt: '12-01-2022'
-     }
+     }/*/
 ]
 
 export {products};
