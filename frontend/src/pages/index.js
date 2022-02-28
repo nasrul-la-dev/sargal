@@ -1,1 +1,1 @@
-export { default as Home } from './home/sections/recentPart/RecentPart'
+export { default as Home } from './home/Home'

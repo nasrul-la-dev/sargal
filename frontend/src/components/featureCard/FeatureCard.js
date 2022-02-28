@@ -4,11 +4,11 @@ import {
     faHeart, faShuffle, faStar, faBasketShopping, faMinus, faPlus
 } from '@fortawesome/free-solid-svg-icons'
 import { faEye, faStarHalfStroke } from '@fortawesome/free-regular-svg-icons'
-import { parse, v4 as uuidv4 } from 'uuid';
-import './ProductCard.css'
+import {v4 as uuidv4 } from 'uuid';
+import './FeatureCard.css'
 
 import Modal from 'react-bootstrap/Modal'
-export default function ProductCard(props) {
+export default function FeatureCard(props) {
     const [compareProduct, setCompareProduct] = useState(false);
     const [viewProduct, setViewProduct] = useState(false);
     const [wishProduct, setWishProduct] = useState(false);

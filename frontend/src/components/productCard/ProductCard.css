@@ -4,6 +4,18 @@
     padding: 1em;
     transition: all 0.6s ease;
     border: 1px solid #ffff;
+    width: 13em;
+    margin: 0.3em;
+}
+@media (max-width: 525px){
+    .product-card{
+        width: 20em; 
+    }  
+}
+@media (max-width: 373px){
+    .product-card{
+        width: 16em; 
+    }  
 }
 .product-card:hover{
     border: 1px solid #119744;
@@ -45,14 +57,30 @@
 }
 .product-widget{
     display: flex;
-    top: 10.5em;
     position: absolute;
-    left: 3.1em;
+    top: 73%;
+    left: 30%;
 }
+@media (max-width: 525px){
+    .product-widget{
+        top: 73%;
+        left: 35%;
+    } 
+}
+@media screen and (max-width: 454px){
+    .product-card{
+        padding: 0.4em;
+    }
+    .label-new{
+        padding: .1px 5px;
+    }
+}
+
+
 .product-widget p {
     background-color: #119744;
     color: #ffff;
-    padding: 0.4em 0.7em;
+    padding: 0.2em 0.4em;
     border-radius: 0.5em;
     cursor: pointer;
     margin: 0.3em;
@@ -72,6 +100,7 @@
     font-size: 1.2em;
     font-weight: bold;
     transition: all 0.5s ease;
+    
 }
 .product-name a:hover{
     color: #119744
@@ -86,6 +115,7 @@
     color: #ff3838;
 }
 .product-add{
+    
     width: 100%;
     padding: .4em 0 .4em 0;
     background: #cccccc;
@@ -117,4 +147,13 @@
     outline: none;
     color: #565765;
     padding: .4em 0.8em .4em 0.8em;
+}
+@media screen and (max-width: 387px){
+    .action-input{
+        width: 3em;
+    }
+    .action-minus, .action-plus{
+        margin: 0.1em;
+        padding: .2em 0.4em .2em 0.4em;
+    }
 }
