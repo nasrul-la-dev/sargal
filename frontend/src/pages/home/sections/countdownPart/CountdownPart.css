@@ -1,0 +1,117 @@
+.countdown-part{
+	padding:80px 0px;
+    background:linear-gradient(to left, #c3ffda, #a1f3c0)
+}
+
+.countdown-content{
+    text-align:center;
+}
+.countdown-content h3 {
+	font-size:40px;
+	font-weight:700;
+	line-height:48px;
+	text-transform:uppercase;
+    margin-bottom:12px;
+}
+.countdown-content p {
+    margin-bottom:38px;
+}
+.countdown{
+	display:flex;
+	align-items:center;
+    justify-content:center;
+}
+.countdown-clock{
+    margin-bottom:45px;
+}
+.countdown-time{
+	padding:0px 30px;
+	position:relative;
+	color: #444;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+    flex-direction:column;
+}
+.countdown-time::before{
+	position:absolute;
+	content:":";
+	top:28%;
+	right:-3px;
+	font-size:25px;
+	transform:translateY(-50%);
+    color: #444;
+}
+.countdown-time:last-child::before{
+    display:none;
+}
+.countdown-time span {
+	display:block;
+	font-size:40px;
+	font-weight:700;
+	line-height:40px;
+    color: #119744;
+}
+.countdown-time small{
+	font-size:18px;
+	font-weight:500;
+    text-transform:capitalize;
+}
+@media (max-width: 575px)
+{
+	.countdown-time{
+	    padding:0px 12px;
+    }
+	.countdown-time:first-child{
+	    padding-left:0px;
+    }
+	.countdown-time:last-child{
+	    padding-right:0px;
+    }
+	.countdown-time span{
+	    font-size:35px;
+    }
+	.countdown-time small{
+	    font-size:16px;
+    }
+}
+.countdown-off
+{
+	width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 35px 30px 30px;
+    background: #ff3838;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.countdown-off span{
+	display:block;
+	text-transform:uppercase;
+	font-size:30px;
+	font-weight:500;
+	letter-spacing:0.5px;
+	color: #ffff;
+}
+.countdown-img{
+	position:relative;
+}
+
+.countdown-img img{
+	width:100%;
+}
+@media (max-width: 767px){
+	.countdown-part{
+		padding:60px 0px;
+	}
+
+	.countdown-img{
+		margin-top:30px;
+	}
+}

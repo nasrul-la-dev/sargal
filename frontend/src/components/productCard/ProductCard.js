@@ -35,6 +35,7 @@ export default function ProductCard(props) {
                 currentValue -= 1;
                 if (currentValue <= 0) {
                     currentValue = 0;
+                    setShowAction(value => !value)
                 }
                 inputElement.value = `${currentValue}`;
             }

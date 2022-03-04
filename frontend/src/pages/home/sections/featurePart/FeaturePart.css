@@ -1,0 +1,143 @@
+.feature-part{
+    margin-bottom: 3em;
+}
+.feature-card{
+    display: flex;
+    background: #ffff;
+    border-radius: 0.6em;
+    padding: 0.5em;
+    transition: all 0.6s ease;
+    border: 1px solid #ffff;
+    width: 30em;
+    margin: 0.3em;
+}
+
+.feature-card:hover{
+    border: 1px solid #119744;
+}
+.feature-media{
+    
+    position: relative;
+    border-right: 1px solid #cccccc;
+    width: 50%;
+}
+.feature-label-new{
+    background: #b12fad;
+    color: #ffff;
+    padding: .1em;
+    border-radius: 0.2em;
+    font-size: 0.9em;
+    font-weight: bolder;
+}
+.feature-wish{
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+.wish{
+    position: absolute;
+    right: 0.1em;
+    font-size: 1.5em;
+}
+.wish_1{
+    color: #cccccc;
+}
+.wish_2{
+    color: #119744;
+    transition: all 1s ease;
+}
+.feature-labels{
+    display: flex;
+}
+.feature-img-container{
+    position: relative;
+}
+.feature-img > img{
+    max-width: 100%;
+}
+.feature-widget{
+    display: flex;
+    position: absolute;
+    top: 78%;
+    left: 30%;
+}
+.feature-widget p {
+    background-color: #119744;
+    color: #ffff;
+    padding: 0.4em 0.7em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    margin: 0.3em;
+    box-shadow: 0px 7px 12px 0px rgb(0 0 0 / 12%);
+}
+.feature-widget p:hover {
+    background-color: #0e7c38;
+}
+
+
+.feature-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1em;
+    width: 50%;
+}
+.icon-star{
+    color: #ffab10;
+    padding: 0 .2em 0 .2em;
+}
+.feature-name a{
+    color: #565765;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: all 0.5s ease; 
+}
+.feature-name a:hover{
+    color: #119744
+}
+.feature-price{
+    font-weight: bold; 
+}
+.feature-price > span{
+    color: #119744
+}
+.normal_price {
+    color: #ff3838;
+}
+.feature-text{
+    padding: 0 0.5em 0 0.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.feature-add{
+    width: 90%;
+    padding: .4em 0 .4em 0;
+    background: #cccccc;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    color: #565765;
+}
+
+@media screen and (max-width: 500px) {
+    .feature-card{
+        width: 95%;
+    }
+    .feature-widget{
+        top: 80%;
+        left: 26%;
+    }
+    .feature-widget p {
+        padding: 0.2em 0.5em;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .feature-widget{
+        left: 20%;
+    }
+}

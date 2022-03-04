@@ -1,0 +1,24 @@
+
+.nav-link{
+    color: #555555;
+    padding: 0.5em 3em 0.5em 3em;
+}
+.nav-link:hover{
+    color: #555555;
+    padding: 0.5em 3em 0.5em 3em;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #119744;
+    background-color: #fff;
+    border-color: none;
+}
+
+.nav-tabs {
+    justify-content: center;
+    background: #ffff;
+}
+
+.nav-tabs .nav-link:hover{
+    color: #119744;
+}

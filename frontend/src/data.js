@@ -74,4 +74,62 @@ const products = [
    }
 ]
 
-export { products };
+const fruits = [
+   {
+      id: "11banana",
+      name: "Banane",
+      img: "images/banana.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "12green_gra",
+      name: "Raisin Blanc",
+      img: "images/green_grape.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "13rais_gra",
+      name: "Raisin Rouge",
+      img: "images/black_grape.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "13black_gra",
+      name: "Raisin Rouge",
+      img: "images/black_grape.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "14orang",
+      name: "Orange",
+      img: "images/orange.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "15almond",
+      name: "Amande",
+      img: "images/almond.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+   {
+      id: "16pine",
+      name: "Ananas",
+      img: "images/pineapple.png",
+      promo_price: 28,
+      normal_price: 34,
+      createdAt: '12-01-2022'
+   },
+]
+export { products , fruits };

@@ -4,7 +4,7 @@ import {
     faHeart, faShuffle, faStar, faBasketShopping, faMinus, faPlus
 } from '@fortawesome/free-solid-svg-icons'
 import { faEye, faStarHalfStroke } from '@fortawesome/free-regular-svg-icons'
-import {v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import './FeatureCard.css'
 
 import Modal from 'react-bootstrap/Modal'
@@ -35,30 +35,31 @@ export default function FeatureCard(props) {
                 currentValue -= 1;
                 if (currentValue <= 0) {
                     currentValue = 0;
+                    setShowAction(value => !value)
                 }
                 inputElement.value = `${currentValue}`;
             }
         }
     }
     return (
-        <div className="product-card">
-            <div className="product-media" >
-                <div className="product-labels">
-                    <label className="label-new">Nouveaté</label>
-                    <label className="product-wish" onClick={() => handleWishingProduct()}>
+        <div className="feature-card">
+
+            <div className='feature-media'>
+                <div className='feature-labels'>
+                    <label className="feature-label-new">Nouveaté</label>
+                    <label className="feature-wish" onClick={() => handleWishingProduct()}>
                         {wishProduct ?
                             <FontAwesomeIcon className="wish wish_2" icon={faHeart} />
                             :
                             <FontAwesomeIcon className="wish wish_1" icon={faHeart} />
                         }
-
                     </label>
                 </div>
-                <div className="product-image-container">
-                    <a className="product-image" href="/">
-                        <img src={process.env.PUBLIC_URL + `/${props.img}`} alt="product" />
+                <div className='feature-img-container'>
+                    <a href='/' className='feature-img'>
+                        <img src={process.env.PUBLIC_URL + `/${props.img}`} alt="feature" />
                     </a>
-                    <div className="product-widget">
+                    <div className="feature-widget">
                         <p title="Comparer ce produit" onClick={() => setCompareProduct(true)}>
                             <FontAwesomeIcon icon={faShuffle} />
                         </p>
@@ -94,18 +95,19 @@ export default function FeatureCard(props) {
                     </div>
                 </div>
             </div>
-            <div className="product-content" >
-                <div className="product-rating pt-3 pb-2">
+
+            <div className='feature-content'>
+                <h6 className="feature-name">
+                    <a href="/">{props.name}</a>
+                </h6>
+                <div className="feature-rating mb-1">
                     <FontAwesomeIcon className="icon-star" icon={faStar} />
                     <FontAwesomeIcon className="icon-star" icon={faStar} />
                     <FontAwesomeIcon className="icon-star" icon={faStar} />
                     <FontAwesomeIcon className="icon-star" icon={faStarHalfStroke} />
                     <span>(3)</span>
                 </div>
-                <h6 className="product-name">
-                    <a href="/">{props.name}</a>
-                </h6>
-                <h6 className="product-price mb-3">
+                <h6 className="feature-price mb-3">
                     {props.promo_price != null ?
                         <>
                             <del className='normal_price'>${props.normal_price}</del>&nbsp;&nbsp;
@@ -116,9 +118,14 @@ export default function FeatureCard(props) {
                         </span>
                     }
                 </h6>
+                <p className='feature-text'>
+                    Lorem ipsum dolor sit consectetur adipisicing xpedita dicta amet olor ut eveniet
+                    Lorem ipsum dolor sit consectetur adipisicing xpedita dicta amet olor ut eveniet
+                    Lorem ipsum dolor sit consectetur adipisicing xpedita dicta amet olor ut eveniet
+                </p>
                 <div className="product-action">
                     {showAction ?
-                        <button className="product-add mb-3" title="Ajouter au panier" onClick={() => handleShowAction()}>
+                        <button className="feature-add" title="Ajouter au panier" onClick={() => handleShowAction()}>
                             <span><FontAwesomeIcon icon={faBasketShopping} />&nbsp;Ajouter</span>
                         </button>
                         :
